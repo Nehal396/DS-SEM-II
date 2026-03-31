@@ -1,0 +1,45 @@
+#include <stdio.h>
+        switch (choice) {
+            case 1:
+                printf("Data: ");
+                scanf("%d", &data);
+                root = insertNode(root, data);
+                break;
+
+            case 2:
+                inorderTraversal(root);
+                printf("\n");
+                break;
+
+            case 3:
+                preorderTraversal(root);
+                printf("\n");
+                break;
+
+            case 4:
+                postorderTraversal(root);
+                printf("\n");
+                break;
+
+            case 5: {
+                printf("Delete: ");
+                scanf("%d", &data);
+                int found = 0;
+                root = deleteNode(root, data, &found);
+                if (!found) {
+                    printf("Value not found\n");
+                }
+                break;
+            }
+
+            case 6:
+                freeTree(root);
+                exit(0);
+
+            default:
+                printf("Invalid choice\n");
+        }
+    }
+
+    return 0;
+}
